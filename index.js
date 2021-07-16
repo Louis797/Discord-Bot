@@ -20,7 +20,6 @@ motsInterdits = [
 	'chibre',
 	'pisse',
 	'pipi',
-	'',
 ];
 
 client.on('ready', () => {
