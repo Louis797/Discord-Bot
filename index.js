@@ -12,6 +12,15 @@ motsInterdits = [
 	'baise',
 	'branler',
 	'branlette',
+	'salope',
+	'enculer',
+	'trou du cul',
+	'foutre',
+	'caca',
+	'chibre',
+	'pisse',
+	'pipi',
+	'',
 ];
 
 client.on('ready', () => {
