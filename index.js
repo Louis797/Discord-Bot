@@ -2,26 +2,6 @@ require('dotenv').config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-motsInterdits = [
-	'bite',
-	'connard',
-	'pute',
-	'chier',
-	'merde',
-	'baiser',
-	'baise',
-	'branler',
-	'branlette',
-	'salope',
-	'enculer',
-	'trou du cul',
-	'foutre',
-	'caca',
-	'chibre',
-	'pisse',
-	'pipi',
-];
-
 client.on('ready', () => {
 	console.log(`logged in as ${client.user.tag}`);
 	message.send(`I just arrived ! How's everyone`);
@@ -41,3 +21,23 @@ client.on('message', async (message) => {
 	}
 });
 client.login(process.env.TOKEN);
+
+motsInterdits = [
+	'bite',
+	'connard',
+	'pute',
+	'chier',
+	'merde',
+	'baiser',
+	'baise',
+	'branler',
+	'branlette',
+	'salope',
+	'enculer',
+	'trou du cul',
+	'foutre',
+	'caca',
+	'chibre',
+	'pisse',
+	'pipi',
+];
