@@ -24,7 +24,7 @@ client.on('message', async (message) => {
 		message.reply('pong !');
 	}
 	for (var i = 0; i < motsInterdits.length; i++) {
-		if (message.content.toLowerCase.includes(motsInterdits[i])) {
+		if (message.content.toLowerCase().includes(motsInterdits[i])) {
 			message.reply(
 				`eh oh dites donc c'est pas bien de dire ça non mais on est où là.`
 			);
