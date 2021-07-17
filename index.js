@@ -10,7 +10,6 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
-	message.content = message.content.replace(/\s+/g, '');
 	if (
 		message.content.toLowerCase().includes('ping') &&
 		message.content.length < 7
