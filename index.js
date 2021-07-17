@@ -6,20 +6,23 @@ client.on('ready', () => {
 	console.log(`logged in as ${client.user.tag}`);
 });
 
-client.on('message', async (msg) => {
-	if (msg.content.toLowerCase().includes('ping') && msg.content.length < 7) {
-		msg.reply('pong !');
-	} else if (
-		msg.content.toLowerCase().includes('pong') &&
-		msg.content.length < 7
+client.on('message', async (message) => {
+	if (
+		message.content.toLowerCase().includes('ping') &&
+		message.content.length < 7
 	) {
-		msg.reply('...ping..?');
-	} else if (msg.content == 'salut') {
-		msg.channel.send('Yo !');
+		message.reply('pong !');
+	} else if (
+		message.content.toLowerCase().includes('pong') &&
+		message.content.length < 7
+	) {
+		message.reply('...ping..?');
+	} else if (message.content == 'salut') {
+		message.channel.send('Yo !');
 	}
 	for (var i = 0; i < motsInterdits.length; i++) {
-		if (msg.content.toLowerCase().includes(motsInterdits[i])) {
-			msg.reply(
+		if (message.content.toLowerCase().includes(motsInterdits[i])) {
+			message.reply(
 				`eh oh dites donc c'est pas bien de dire ça non mais on est où là.`
 			);
 			break;
@@ -27,9 +30,9 @@ client.on('message', async (msg) => {
 	}
 });
 
-client.on('messageDelete', (msg) => {
+client.on('messageDelete', (message) => {
 	message.reply(
-		'Arrêtetout de suite de supprimer des messages. Je te vois, tu sais.'
+		'Arrête tout de suite de supprimer des messages. Je te vois, tu sais.'
 	);
 });
 
