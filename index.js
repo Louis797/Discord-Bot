@@ -20,7 +20,7 @@ client.on('message', async (message) => {
 	) {
 		message.reply('...ping..?');
 	} else if (message.content.toLowerCase() == 'salut') {
-		message.send('Yo !');
+		message.channel.send('Yo !');
 	}
 	for (var i = 0; i < motsInterdits.length; i++) {
 		if (message.content.toLowerCase().includes(motsInterdits[i])) {
