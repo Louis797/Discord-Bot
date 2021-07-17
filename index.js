@@ -19,7 +19,7 @@ client.on('message', async (message) => {
 		message.reply('...ping..?');
 	} else if (message.content == 'salut') {
 		message.channel.send('Yo !');
-	} else if (message.content === 'vive les bots') {
+	} else if (message.content == 'vive les bots') {
 		message.react('❤️');
 	}
 	for (var i = 0; i < motsInterdits.length; i++) {
