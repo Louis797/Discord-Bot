@@ -8,7 +8,7 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
-	if (message.content == 'ping') {
+	if (message.content.toLowerCase() == 'ping') {
 		message.reply('pong !');
 	}
 	for (var i = 0; i < motsInterdits.length; i++) {
