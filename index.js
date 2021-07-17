@@ -6,7 +6,6 @@ client.login(process.env.TOKEN);
 
 client.on('ready', () => {
 	console.log(`logged in as ${client.user.tag}`);
-	message.send(`I just arrived ! How's everyone`);
 });
 
 client.on('message', async (message) => {
@@ -20,6 +19,8 @@ client.on('message', async (message) => {
 		message.content.length < 7
 	) {
 		message.reply('...ping..?');
+	} else if (message.content.toLowerCase() == 'salut') {
+		message.send('Yo !');
 	}
 	for (var i = 0; i < motsInterdits.length; i++) {
 		if (message.content.toLowerCase().includes(motsInterdits[i])) {
