@@ -2,6 +2,8 @@ require('dotenv').config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+client.login(process.env.TOKEN);
+
 client.on('ready', () => {
 	console.log(`logged in as ${client.user.tag}`);
 	message.send(`I just arrived ! How's everyone`);
@@ -28,8 +30,6 @@ client.on('message', async (message) => {
 		}
 	}
 });
-
-client.login(process.env.TOKEN);
 
 motsInterdits = [
 	'bite',
