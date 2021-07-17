@@ -6,7 +6,7 @@ client.on('ready', () => {
 	console.log(`logged in as ${client.user.tag}`);
 });
 
-client.on('msg', async (msg) => {
+client.on('message', async (msg) => {
 	if (msg.content.toLowerCase().includes('ping') && msg.content.length < 7) {
 		msg.reply('pong !');
 	} else if (
