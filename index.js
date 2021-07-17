@@ -76,3 +76,4 @@ motsInterdits = [
 //? Répond pond si on dit ping,
 //? Répond ping si on dit pong,
 //? Répond que c'est pas bien quand on dit un gros mot
+//? ...
