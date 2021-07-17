@@ -13,6 +13,11 @@ client.on('message', async (message) => {
 		message.content.length < 7
 	) {
 		message.reply('pong !');
+	} else if (
+		message.content.toLowerCase().includes('pong') &&
+		message.content.length < 7
+	) {
+		message.reply('...ping..?');
 	}
 	for (var i = 0; i < motsInterdits.length; i++) {
 		if (message.content.toLowerCase().includes(motsInterdits[i])) {
