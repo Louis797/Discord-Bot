@@ -25,6 +25,8 @@ client.on('message', async (message) => {
 		message.react('6️⃣');
 		message.react('9️⃣');
 		message.reply('nice');
+	} else if (message.content == 'comment ça va ?') {
+		message.channel.send('Très bien et toi ? :)');
 	}
 	for (var i = 0; i < motsInterdits.length; i++) {
 		if (message.content.toLowerCase().includes(motsInterdits[i])) {
