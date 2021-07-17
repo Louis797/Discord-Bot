@@ -49,4 +49,9 @@ motsInterdits = [
 	'chibre',
 	'pisse',
 	'pipi',
+	'couille',
+	'con',
+	'abruti',
+	'niquer',
+	'batard',
 ];
