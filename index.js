@@ -10,7 +10,7 @@ client.on('ready', () => {
 client.on('message', async (message) => {
 	if (
 		message.content.toLowerCase().includes('ping') &&
-		message.content.length < 5
+		message.content.length < 7
 	) {
 		message.reply('pong !');
 	}
