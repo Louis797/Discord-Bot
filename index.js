@@ -1,6 +1,8 @@
 require('dotenv').config();
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client = new Discord.Client({
+	partials: ['MESSAGE'],
+});
 
 client.on('ready', () => {
 	console.log(`logged in as ${client.user.tag}`);
@@ -26,7 +28,7 @@ client.on('message', async (message) => {
 		message.react('9️⃣');
 		message.reply('nice');
 	} else if (message.content == 'comment ça va ?') {
-		message.channel.send('Très bien et toi ? :)');
+		message.channel.send('Bof :slight_frown: ');
 	}
 	for (var i = 0; i < motsInterdits.length; i++) {
 		if (message.content.toLowerCase().includes(motsInterdits[i])) {
