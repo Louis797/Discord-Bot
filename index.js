@@ -19,7 +19,7 @@ client.on('message', async (message) => {
 		message.content.length < 7
 	) {
 		message.reply('...ping..?');
-	} else if (message.content.toLowerCase() == 'salut') {
+	} else if (message.content == 'salut') {
 		message.channel.send('Yo !');
 	}
 	for (var i = 0; i < motsInterdits.length; i++) {
