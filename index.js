@@ -21,8 +21,6 @@ client.on('message', async (message) => {
 		message.channel.send('Yo !');
 	} else if (message.content == 'vive les bots') {
 		message.react('❤️');
-	} else if (message.content == 'je suis  cool') {
-		message.member.roles.add('783390808028086272');
 	}
 	for (var i = 0; i < motsInterdits.length; i++) {
 		if (message.content.toLowerCase().includes(motsInterdits[i])) {
