@@ -35,7 +35,6 @@ client.on('message', async (message) => {
 			message.reply(
 				`eh oh dites donc c'est pas bien de dire ça non mais on est où là.`
 			);
-			break;
 		}
 	}
 });
