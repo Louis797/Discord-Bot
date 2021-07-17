@@ -21,14 +21,14 @@ client.on('message', async (message) => {
 		message.reply('...ping..?');
 	} else if (message.content == 'salut') {
 		message.channel.send('Yo !');
+	} else if (message.content == 'comment ça va ?') {
+		message.channel.send('Bof :slight_frown: ');
 	} else if (message.content == 'vive les bots') {
 		message.react('❤️');
 	} else if (message.content == '69') {
 		message.react('6️⃣');
 		message.react('9️⃣');
 		message.reply('nice');
-	} else if (message.content == 'comment ça va ?') {
-		message.channel.send('Bof :slight_frown: ');
 	}
 	for (var i = 0; i < motsInterdits.length; i++) {
 		if (message.content.toLowerCase().includes(motsInterdits[i])) {
