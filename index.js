@@ -29,6 +29,8 @@ client.on('message', async (message) => {
 		message.react('6️⃣');
 		message.react('9️⃣');
 		message.reply('nice');
+	} else if (message.mentions.has(client.user.id)) {
+		message.reply('Hello there!');
 	}
 	for (var i = 0; i < motsInterdits.length; i++) {
 		if (message.content.toLowerCase().includes(motsInterdits[i])) {
