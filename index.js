@@ -44,9 +44,7 @@ client.on('message', async (message) => {
 });
 
 client.on('messageDelete', (message) => {
-	message.reply(
-		'Arrête tout de suite de supprimer des messages. Je te vois, tu sais.'
-	);
+	message.reply(`Un de tes messages a été suprimé : '${message.content}'`);
 });
 
 client.login(process.env.TOKEN);
