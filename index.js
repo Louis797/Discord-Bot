@@ -28,7 +28,9 @@ client.on('message', async (message) => {
 	} else if (message.content == '69') {
 		message.react('6️⃣');
 		message.react('9️⃣');
-		message.tts('nice');
+		message.reply('Nice.', {
+			tts: true,
+		});
 	}
 	for (var i = 0; i < motsInterdits.length; i++) {
 		if (message.content.toLowerCase().includes(motsInterdits[i])) {
