@@ -74,6 +74,7 @@ motsInterdits = [
 	'abruti',
 	'niquer',
 	'batard',
+	'nique',
 ];
 
 //! Fonctionalités implémentées :
