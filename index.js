@@ -15,7 +15,7 @@ client.on('message', async (message) => {
 	) {
 		message.reply('pong !');
 		message.channel.send(message.content);
-		message.channel.send(message.author);
+		message.channel.send(`Hello Mister ${message.author}`);
 		client.channels.cache.get(`866376359962214450`).send(`Text`);
 	} else if (
 		message.content.toLowerCase().includes('pong') &&
