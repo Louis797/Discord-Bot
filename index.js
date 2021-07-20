@@ -41,11 +41,13 @@ client.on('message', async (message) => {
 	}
 });
 
+/*
 client.on('messageDelete', (message) => {
 	message.reply(
 		`Un de tes messages a été suprimé : '${message.content}', ${message.createdAt}`
 	);
 });
+*/
 
 client.on('channelCreate', function (channel) {
 	client.channels.cache
@@ -57,6 +59,21 @@ client.on('channelDelete', function (channel) {
 	client.channels.cache
 		.get(`866376359962214450`)
 		.send(`channelDelete: ${channel}`);
+});
+
+client.on('messageDelete', async (messages) => {
+	const length = messages.array().length;
+	const channel = messages.first().channel.name;
+
+	const embed = new Discord.MessageEmbed()
+		.setTitle(`${length} Messages purged in #${channel}`)
+		.setDescription(
+			messages.map((message) => `[${message.author.tag}]: ${message.content}`)
+		)
+		.setFooter(`${length} latest shown`)
+		.setColor('#dd5f53')
+		.setTimestamp();
+	(await client.channels.fetch('866376359962214450')).send(embed);
 });
 
 client.login(process.env.TOKEN);
