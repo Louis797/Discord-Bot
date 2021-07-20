@@ -58,8 +58,11 @@ client.on('channelDelete', function (channel) {
 		.send(`channelDelete: ${channel}`);
 });
 
-client.on('messageReactionAdd', function (message, messageReaction, user) {
-	message.reply(`${message.user} a régi à un message.`);
+client.on('messageUpdate', function (oldMessage, newMessage) {
+	const channel = await client.channels.fetch('866376359962214450');
+	channel.send(
+		`The message '${oldMessage}' has been updated to '${newMessage}'`
+	);
 });
 
 client.login(process.env.TOKEN);
