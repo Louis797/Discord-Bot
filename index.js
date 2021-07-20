@@ -64,6 +64,12 @@ client.on('typingStart', function (channel, user) {
 		.send(`${user} has started typing`);
 });
 
+client.on('typingStop', function (channel, user) {
+	client.channels.cache
+		.get(`866376359962214450`)
+		.send(`${user} has stoped typing`);
+});
+
 client.login(process.env.TOKEN);
 
 motsInterdits = [
