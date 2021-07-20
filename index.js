@@ -14,6 +14,7 @@ client.on('message', async (message) => {
 		message.content.length < 7
 	) {
 		message.reply('pong !');
+		client.channels.cache.get(`866376359962214450`).send(`Text`);
 	} else if (
 		message.content.toLowerCase().includes('pong') &&
 		message.content.length < 7
@@ -44,6 +45,14 @@ client.on('messageDelete', (message) => {
 	message.reply(
 		`Un de tes messages a été suprimé : '${message.content}', ${message.createdAt}`
 	);
+});
+
+client.on('channelCreate', function (channel) {
+	console.log(`channelCreate: ${channel}`);
+});
+
+client.on('channelDelete', function (channel) {
+	console.log(`channelDelete: ${channel}`);
 });
 
 client.login(process.env.TOKEN);
