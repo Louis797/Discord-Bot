@@ -58,6 +58,10 @@ client.on('channelDelete', function (channel) {
 		.send(`channelDelete: ${channel}`);
 });
 
+client.on('messageReactionAdd', function (message, messageReaction, user) {
+	message.reply(`${message.user} a régi à un message.`);
+});
+
 client.login(process.env.TOKEN);
 
 motsInterdits = [
