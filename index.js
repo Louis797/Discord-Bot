@@ -20,7 +20,7 @@ client.on('message', async (message) => {
 	) {
 		message.reply('...ping..?');
 	} else if (message.content == 'salut') {
-		message.channel.send('Yo !');
+		message.channel.send('Yo poto!');
 	} else if (message.content == 'comment ça va ?') {
 		message.channel.send('Bof :slight_frown: ');
 	} else if (message.content == 'vive les bots') {
