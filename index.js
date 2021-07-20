@@ -48,11 +48,15 @@ client.on('messageDelete', (message) => {
 });
 
 client.on('channelCreate', function (channel) {
-	console.log(`channelCreate: ${channel}`);
+	client.channels.cache
+		.get(`866376359962214450`)
+		.send(`channelCreate: ${channel}`);
 });
 
 client.on('channelDelete', function (channel) {
-	console.log(`channelDelete: ${channel}`);
+	client.channels.cache
+		.get(`866376359962214450`)
+		.send(`channelDelete: ${channel}`);
 });
 
 client.login(process.env.TOKEN);
