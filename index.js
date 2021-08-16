@@ -22,7 +22,7 @@ client.on('message', async (message) => {
 	} else if (message.content == 'salut') {
 		message.channel.send('Bonjour !');
 	} else if (message.content == 'comment ça va ?') {
-		message.channel.send('ça va :slight_frown: ');
+		message.channel.send('ça va :grin: ');
 	} else if (message.content == 'vive les bots') {
 		message.react('❤️');
 	} else if (message.content == '69') {
@@ -56,12 +56,6 @@ client.on('channelDelete', function (channel) {
 	client.channels.cache
 		.get(`866376359962214450`)
 		.send(`channelDelete: ${channel}`);
-});
-
-client.on('typingStart', function (channel, user) {
-	client.channels.cache
-		.get(`866376359962214450`)
-		.send(`${user} a commencé à écrire un message`);
 });
 
 client.login(process.env.TOKEN);
