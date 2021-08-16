@@ -20,9 +20,9 @@ client.on('message', async (message) => {
 	) {
 		message.reply('...ping..?');
 	} else if (message.content == 'salut') {
-		message.channel.send('Yo poto!');
+		message.channel.send('Bonjour !');
 	} else if (message.content == 'comment ça va ?') {
-		message.channel.send('Bof :slight_frown: ');
+		message.channel.send('ça va :slight_frown: ');
 	} else if (message.content == 'vive les bots') {
 		message.react('❤️');
 	} else if (message.content == '69') {
@@ -61,48 +61,9 @@ client.on('channelDelete', function (channel) {
 client.on('typingStart', function (channel, user) {
 	client.channels.cache
 		.get(`866376359962214450`)
-		.send(`${user} has started typing`);
-});
-
-client.on('typingStop', function (channel, user) {
-	client.channels.cache
-		.get(`866376359962214450`)
-		.send(`${user} has stoped typing`);
+		.send(`${user} a commencé à écrire un message`);
 });
 
 client.login(process.env.TOKEN);
 
-motsInterdits = [
-	'bite',
-	'connard',
-	'pute',
-	'chier',
-	'merde',
-	'baiser',
-	'baise',
-	'branler',
-	'branlette',
-	'salope',
-	'enculer',
-	'trou du cul',
-	'foutre',
-	'caca',
-	'chibre',
-	'pisse',
-	'pipi',
-	'couille',
-	'con',
-	'abruti',
-	'niquer',
-	'batard',
-	'nique',
-];
-
-//! Fonctionalités implémentées :
-
-//? Dit bonjour quand il se connecte à un serveur,
-//? Dit Yo quand on dit salut,
-//? Répond pond si on dit ping,
-//? Répond ping si on dit pong,
-//? Répond que c'est pas bien quand on dit un gros mot
-//? ...
+motsInterdits = ['connard'];
