@@ -43,7 +43,7 @@ client.on('message', async (message) => {
 client.on('messageDelete', (message) => {
 	client.channels.cache
 		.get(`866376359962214450`)
-		.send(message.content);
+		.send(`Le message : "`, message.content, `" de `, message.author, `a été supprimé.`);
 });
 
 client.on('channelCreate', function (channel) {
