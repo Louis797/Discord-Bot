@@ -9,9 +9,6 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
-	if (message.author.id === client.user.id) {
-		message.reply('eh c est moi wesh')
-	}
 	if (
 		message.content.toLowerCase().includes('ping') &&
 		message.content.length < 7
