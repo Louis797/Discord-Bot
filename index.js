@@ -32,7 +32,7 @@ client.on('message', async (message) => {
 	}
 	for (var i = 0; i < motsInterdits.length; i++) {
 		if (message.content.toLowerCase().includes(motsInterdits[i])) {
-			message.reply(
+			message.author.send(
 				`eh oh dites donc c'est pas bien de dire ça non mais on est où là.`
 			);
 			break;
