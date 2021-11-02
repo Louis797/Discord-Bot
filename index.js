@@ -10,7 +10,7 @@ client.on('ready', () => {
 	.send('Je suis connecté désormais ahahahha');
 });
 
-let x = "1001"
+let x = 1001
 
 setInterval(Thing, 30000);
 
