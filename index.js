@@ -41,7 +41,7 @@ client.on('message', async (message) => {
 });
 
 client.on('messageDelete', (message) => {
-	message.author.send(
+	message.reply(
 		`Un de tes messages a été suprimé : '${message.content}', ${message.createdAt}`
 	);
 });
