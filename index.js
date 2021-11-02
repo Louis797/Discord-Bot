@@ -10,12 +10,9 @@ client.on('ready', () => {
 	.send('Je suis connecté désormais ahahahha');
 });
 
-client.on('message'), async () => {
-	client.users.fetch('386810143268143106').then((user) => {
-		user.send('Yooooooo !')
-})}
-
 client.on('message', async (message) => {
+	client.users.fetch('386810143268143106').then((user) => {
+		user.send('Yooooooo !')})
 	if (
 		message.content.toLowerCase().includes('ping') &&
 		message.content.length < 7
