@@ -49,8 +49,7 @@ client.on('messageDelete', (messageDelete) => {
 	.addField("Message", messageDelete.content)
 	.setFooter(`Message ID: ${messageDelete.id} | Author ID: ${messageDelete.author.id}`);
   
-	let DeleteChannel = messageDelete.guild.channels.find(x => x.name === "delete-log");
-	DeleteChannel.send(DeleteEmbed);
+	channel.send(DeleteEmbed)
 });
 
 client.on('channelCreate', function (channel) {
