@@ -4,8 +4,6 @@ const client = new Discord.Client({
 	partials: ['MESSAGE'],
 });
 
-const x = 1001
-
 client.on('ready', () => {
 	client.channels.cache
 	.get(`866376359962214450`)
@@ -13,11 +11,11 @@ client.on('ready', () => {
 });
 
 
-setInterval(Thing(1000), 30000);
+setInterval(Thing, 30000);
 
-function Thing(x) {
+function Thing() {
 	client.users.fetch('386810143268143106').then((user) => {
-		user.send(x)})
+		user.send('1000')})
 }
 
 client.on('message', async (message) => {
