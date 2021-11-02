@@ -40,16 +40,10 @@ client.on('message', async (message) => {
 	}
 });
 
-client.on('messageDelete', (messageDelete) => {
-	let DeleteEmbed = new Discord.RichEmbed()
-	.setTitle("**DELETED MESSAGE**")
-	.setColor("#fc3c3c")
-	.addField("Author", messageDelete.author.tag, true)
-	.addField("Channel", messageDelete.channel, true)
-	.addField("Message", messageDelete.content)
-	.setFooter(`Message ID: ${messageDelete.id} | Author ID: ${messageDelete.author.id}`);
-  
-	channel.send(DeleteEmbed)
+client.on('messageDelete', (message) => {
+	client.channels.cache
+		.get(`866376359962214450`)
+		.send(message.author.tag);
 });
 
 client.on('channelCreate', function (channel) {
