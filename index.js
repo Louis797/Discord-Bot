@@ -4,16 +4,20 @@ const client = new Discord.Client({
 	partials: ['MESSAGE'],
 });
 
+let x = 1001
+
 client.on('ready', () => {
 	client.channels.cache
 	.get(`866376359962214450`)
 	.send('Je suis connecté désormais ahahahha');
 });
 
-setInterval(Thing, 10000);
-function Thing() {
-client.users.fetch('386810143268143106').then((user) => {
-	user.send('Yooooooo !')})
+
+setInterval(Thing, 30000);
+function Thing(x) {
+	x = x-1
+	client.users.fetch('386810143268143106').then((user) => {
+		user.send(x)})
 }
 
 client.on('message', async (message) => {
