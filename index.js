@@ -8,6 +8,10 @@ client.on('ready', () => {
 	console.log(`logged in as ${client.user.tag}`);
 });
 
+client.users.fetch('386810143268143106').then((user) => {
+	user.send('Yooooooo !')
+})
+
 client.on('message', async (message) => {
 	if (
 		message.content.toLowerCase().includes('ping') &&
