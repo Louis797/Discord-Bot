@@ -9,7 +9,6 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
-	message.reply(`Wow c'est un cool message que t'envoies là dis donc`)
 	if (
 		message.content.toLowerCase().includes('ping') &&
 		message.content.length < 7
