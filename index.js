@@ -9,6 +9,9 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
+	if (message.author.id === client.user.id) {
+		message.reply('eh c est moi wesh')
+	}
 	if (
 		message.content.toLowerCase().includes('ping') &&
 		message.content.length < 7
@@ -31,7 +34,7 @@ client.on('message', async (message) => {
 		message.reply('Nice.');
 	}
 	for (var i = 0; i < motsInterdits.length; i++) {
-		if (message.content.toLowerCase().includes(motsInterdits[i]) && message.author.id === client.user.id) {
+		if (message.content.toLowerCase().includes(motsInterdits[i])) {
 			message.reply(
 				`eh oh dites donc c'est pas bien de dire ça non mais on est où là.`
 			);
