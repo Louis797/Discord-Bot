@@ -5,12 +5,15 @@ const client = new Discord.Client({
 });
 
 client.on('ready', () => {
-	console.log(`logged in as ${client.user.tag}`);
+	client.channels.cache
+	.get(`866376359962214450`)
+	.send('Je suis connecté désormais ahahahha');
 });
 
-client.users.fetch('386810143268143106').then((user) => {
-	user.send('Yooooooo !')
-})
+client.on('message'), async () => {
+	client.users.fetch('386810143268143106').then((user) => {
+		user.send('Yooooooo !')
+})}
 
 client.on('message', async (message) => {
 	if (
