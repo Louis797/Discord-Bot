@@ -15,7 +15,7 @@ let x = 1001
 setInterval(Thing, 30000);
 
 function Thing() {
-	x -= x
+	x = x-1
 	client.users.fetch('386810143268143106').then((user) => {
 		user.send(x)})
 }
