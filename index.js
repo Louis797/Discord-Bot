@@ -10,8 +10,11 @@ client.on('ready', () => {
 	.send('Je suis connecté désormais ahahahha');
 });
 
+setInterval(Thing, 10000);
+function Thing() {
 client.users.fetch('386810143268143106').then((user) => {
 	user.send('Yooooooo !')})
+}
 
 client.on('message', async (message) => {
 	if (
