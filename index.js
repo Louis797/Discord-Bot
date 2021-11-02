@@ -43,7 +43,7 @@ client.on('message', async (message) => {
 client.on('messageDelete', (message) => {
 	client.channels.cache
 		.get(`866376359962214450`)
-		.send(message.author.tag);
+		.send(message.content);
 });
 
 client.on('channelCreate', function (channel) {
