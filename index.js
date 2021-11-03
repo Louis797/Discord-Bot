@@ -8,7 +8,6 @@ let motsInterdits = ["connard"];
 let x = 4;
 let y = 0;
 let id = "905517661415436328";
-setInterval(Thing, 60000);
 
 function Thing() {
   if (x >= 2) {
@@ -35,7 +34,9 @@ client.on("ready", () => {
 });
 
 client.on("message", async (message) => {
-  if (
+  if (message.content.toLowerCase() == "timer") {
+    setInterval(Thing, 60000);
+  } else if (
     message.content.toLowerCase().includes("ping") &&
     message.content.length < 7
   ) {
