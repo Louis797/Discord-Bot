@@ -16,15 +16,18 @@ let y = 0
 setInterval(Thing, 30000);
 
 function Thing() {
-	if (x >= 1) {
+	if (x >= 2) {
 		x -= 1
 		client.users.fetch('386810143268143106').then((user) => {
 			user.send(x)})
 	} else {
 		if (y == 0) {
 			y += 1
+			x -= 1
 			client.users.fetch('386810143268143106').then((user) => {
-				user.send('Youpi !')})
+				user.send(x)
+				user.send('Youpi !')
+			})
 		}
 	}
 }
