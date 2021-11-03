@@ -35,7 +35,8 @@ client.on("ready", () => {
 
 client.on("message", async (message) => {
   if (message.content.toLowerCase() == "timer") {
-    setInterval(Thing(), 60000);
+    Thing();
+    setInterval(Thing, 60000);
   } else if (
     message.content.toLowerCase().includes("ping") &&
     message.content.length < 7
