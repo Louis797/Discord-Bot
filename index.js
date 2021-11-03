@@ -5,7 +5,6 @@ const client = new Discord.Client({
 });
 
 let motsInterdits = ["connard"];
-let x = 4;
 let y = 0;
 let id = "905517661415436328";
 
@@ -38,6 +37,7 @@ client.on("message", async (message) => {
     message.content.toLowerCase() == "timer" &&
     message.author.tag == "Siu0l#8218"
   ) {
+    let x = 4;
     Thing();
     setInterval(Thing, 60000);
   } else if (
@@ -75,12 +75,6 @@ client.on("messageDelete", (message) => {
   message.author.send(
     `Le message : "${message.content}",  de ${message.author} a été supprimé.`
   );
-});
-
-client.on("channelCreate", function (channel) {
-  client.channels.cache
-    .get(`866376359962214450`)
-    .send(`channelCreate: ${channel}`);
 });
 
 client.on("channelDelete", function (channel) {
