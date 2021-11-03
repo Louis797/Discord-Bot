@@ -10,21 +10,22 @@ client.on('ready', () => {
 	.send('Je suis connecté désormais ahahahha');
 });
 
-let x = 151
+let x = 3
 let y = 0
+let id = '386810143268143106'
 
-setInterval(Thing, 30000);
+setInterval(Thing, 60000);
 
 function Thing() {
 	if (x >= 2) {
 		x -= 1
-		client.users.fetch('386810143268143106').then((user) => {
+		client.users.fetch(id).then((user) => {
 			user.send(x)})
 	} else {
 		if (y == 0) {
 			y += 1
 			x -= 1
-			client.users.fetch('386810143268143106').then((user) => {
+			client.users.fetch(id).then((user) => {
 				user.send(x)
 				user.send('Youpi !')
 			})
