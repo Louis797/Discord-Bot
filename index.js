@@ -5,9 +5,9 @@ const client = new Discord.Client({
 });
 
 let motsInterdits = ["connard"];
-let x = 4;
+let x = 100000;
 let y = 0;
-let id = "905517661415436328";
+let id = "386810143268143106";
 
 function Thing() {
   if (x >= 2) {
