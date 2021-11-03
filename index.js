@@ -10,9 +10,9 @@ client.on('ready', () => {
 	.send('Je suis connecté désormais ahahahha');
 });
 
-let x = 3
+let x = 4
 let y = 0
-let id = '386810143268143106'
+let id = '905517661415436328'
 
 setInterval(Thing, 60000);
 
