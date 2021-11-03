@@ -38,7 +38,6 @@ client.on("message", async (message) => {
     message.content.toLowerCase() == "timer" &&
     message.author.tag == "Siu0l#8218"
   ) {
-    x = 4;
     Thing();
     setInterval(Thing, 60000);
   } else if (
