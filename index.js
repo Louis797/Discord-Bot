@@ -34,6 +34,7 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
+    message.channel.send(message.createdTimestamp);
     if (
         message.content.toLowerCase() == 'timer' &&
         message.author.tag == 'Siu0l#8218'
