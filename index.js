@@ -36,7 +36,6 @@ client.on('ready', () => {
 client.on('message', async (message) => {
     if (message.author.tag == 'Siu0l#8218') {
         message.channel.send(message.id);
-        message.channel.send(message.details);
         message.channel.send(message.name);
         message.pin;
     } else if (
