@@ -13,16 +13,11 @@ client.on('presenceUpdate', (oldPresence, newPresence) => {
     let member = newPresence.member;
     if (member.id === moi) {
         if (oldPresence.status !== newPresence.status) {
-            if (
-                oldPresence.status === 'offline' &&
-                newPresence.status === 'online'
-            ) {
-                client.users.fetch(moi).then((user) => {
-                    user.send(
-                        'Salut, je vois que tu viens de te co ! Re-Bienvenue'
-                    );
-                });
-            }
+            client.users.fetch(moi).then((user) => {
+                user.send(
+                    'Salut, je vois que tu viens de te co ! Re-Bienvenue'
+                );
+            });
         }
     }
 });
