@@ -12,7 +12,8 @@ let moi = '386810143268143106';
 client.on('presenceUpdate', () => {
     client.users.fetch(moi).then((user) => {
         user.send('Bonjour à toi, plus moi...');
-})
+    });
+});
 
 function Timer() {
     if (x >= 2) {
