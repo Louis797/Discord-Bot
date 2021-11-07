@@ -7,9 +7,27 @@ const client = new Discord.Client({
 let motsInterdits = ['connard'];
 let x = 100000;
 let y = 0;
-let id = '386810143268143106';
+let moi = '386810143268143106';
 
-function Thing() {
+client.on('presenceUpdate', (oldPresence, newPresence) => {
+    let member = newPresence.member;
+    if (member.id === moi) {
+        if (oldPresence.status !== newPresence.status) {
+            if (
+                oldPresence.status === 'offline' &&
+                newPresence.status === 'online'
+            ) {
+                client.users.fetch(moi).then((user) => {
+                    user.send(
+                        'Salut, je vois que tu viens de te co ! Re-Bienvenue'
+                    );
+                });
+            }
+        }
+    }
+});
+
+function Timer() {
     if (x >= 2) {
         x -= 1;
         client.users.fetch(id).then((user) => {
@@ -28,6 +46,8 @@ function Thing() {
 }
 
 client.on('ready', () => {
+    Repeat();
+    setInterval(Repeat, 30000);
     client.channels.cache
         .get(`866376359962214450`)
         .send('Je suis connecté désormais ahahahha');
@@ -38,8 +58,8 @@ client.on('message', async (message) => {
         message.content.toLowerCase() == 'timer' &&
         message.author.tag == 'Siu0l#8218'
     ) {
-        Thing();
-        setInterval(Thing, 60000);
+        Timer();
+        setInterval(Timer, 60000);
     } else if (
         message.content.toLowerCase().includes('ping') &&
         message.content.length < 7
@@ -84,3 +104,20 @@ client.on('channelDelete', function (channel) {
 });
 
 client.login(process.env.TOKEN);
+
+/*
+// Your specific channel to send a message in.
+let channel = member.guild.channels.cache.get('<channelId>');
+// You can also use member.guild.channels.resolve('<channelId>');
+
+let text = "";
+
+if (newPresence.status === "online") {
+    text = "Our special member is online!";
+} else if (newPresence.status === "offline") {
+    text = "Oh no! Our special member is offline.";
+}
+// etc...
+
+channel.send(text);
+*/
