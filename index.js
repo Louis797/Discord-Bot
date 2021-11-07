@@ -13,7 +13,7 @@ client.on('presenceUpdate', (oldPresence, newPresence) => {
     let member = newPresence.member;
     if (member.id === moi) {
         if (oldPresence.status !== newPresence.status) {
-            let channel = member.guild.channels.cache.get('866376359962214450');
+            let channel = channel.cache.get('866376359962214450');
             let text = '';
             if (newPresence.status === 'online') {
                 text = 'Our special member is online!';
