@@ -9,21 +9,10 @@ let x = 100000;
 let y = 0;
 let moi = '386810143268143106';
 
-client.on('presenceUpdate', (oldPresence, newPresence) => {
-    let member = newPresence.member;
-    if (member.id === moi) {
-        if (oldPresence.status !== newPresence.status) {
-            let channel = channel.cache.get('866376359962214450');
-            let text = '';
-            if (newPresence.status === 'online') {
-                text = 'Our special member is online!';
-            } else if (newPresence.status === 'offline') {
-                text = 'Oh no! Our special member is offline.';
-            }
-            channel.send(text);
-        }
-    }
-});
+client.on('presenceUpdate', () => {
+    client.users.fetch(moi).then((user) => {
+        user.send('Bonjour à toi, plus moi...');
+})
 
 function Timer() {
     if (x >= 2) {
@@ -100,3 +89,21 @@ client.on('channelDelete', function (channel) {
 });
 
 client.login(process.env.TOKEN);
+
+/*
+client.on('presenceUpdate', (oldPresence, newPresence) => {
+    let member = newPresence.member;
+    if (member.id === moi) {
+        if (oldPresence.status !== newPresence.status) {
+            let channel = channel.cache.get('866376359962214450');
+            let text = '';
+            if (newPresence.status === 'online') {
+                text = 'Our special member is online!';
+            } else if (newPresence.status === 'offline') {
+                text = 'Oh no! Our special member is offline.';
+            }
+            channel.send(text);
+        }
+    }
+});
+*/
