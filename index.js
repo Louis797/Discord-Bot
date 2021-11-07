@@ -13,11 +13,14 @@ client.on('presenceUpdate', (oldPresence, newPresence) => {
     let member = newPresence.member;
     if (member.id === moi) {
         if (oldPresence.status !== newPresence.status) {
-            client.users.fetch(moi).then((user) => {
-                user.send(
-                    'Salut, je vois que tu viens de te co ! Re-Bienvenue'
-                );
-            });
+            let channel = member.guild.channels.cache.get('866376359962214450');
+            let text = '';
+            if (newPresence.status === 'online') {
+                text = 'Our special member is online!';
+            } else if (newPresence.status === 'offline') {
+                text = 'Oh no! Our special member is offline.';
+            }
+            channel.send(text);
         }
     }
 });
@@ -97,20 +100,3 @@ client.on('channelDelete', function (channel) {
 });
 
 client.login(process.env.TOKEN);
-
-/*
-// Your specific channel to send a message in.
-let channel = member.guild.channels.cache.get('<channelId>');
-// You can also use member.guild.channels.resolve('<channelId>');
-
-let text = "";
-
-if (newPresence.status === "online") {
-    text = "Our special member is online!";
-} else if (newPresence.status === "offline") {
-    text = "Oh no! Our special member is offline.";
-}
-// etc...
-
-channel.send(text);
-*/
