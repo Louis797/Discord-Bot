@@ -12,9 +12,9 @@ let moi = '386810143268143106';
 client.on('presenceUpdate', (oldPresence, newPresence) => {
     if (oldPresence !== newPresence) {
         if (newPresence === 'online') {
-            client.users.fetch(moi).then((user) => {
-                user.send('Bonjour à toi, plus moi...');
-            });
+            client.channels.cache
+                .get(`866376359962214450`)
+                .send('Tiens tiens mais tu es co ou quoi là');
         }
     }
 });
