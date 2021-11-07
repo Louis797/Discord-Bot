@@ -46,8 +46,6 @@ function Timer() {
 }
 
 client.on('ready', () => {
-    Repeat();
-    setInterval(Repeat, 30000);
     client.channels.cache
         .get(`866376359962214450`)
         .send('Je suis connecté désormais ahahahha');
